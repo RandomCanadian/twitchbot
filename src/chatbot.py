@@ -6,11 +6,11 @@ import _random
 SERVER = "irc.twitch.tv"  # server
 PORT = 6667  # port
 ### Options (Edit this)
-PASS = "oauth:bpsr9lka4003yk82venv0h6uego3zf"  # bot password can be found on https://twitchapps.com/tmi/
-BOT = "randcanbot"  # Bot's name [NO CAPITALS]
-CHANNEL = "a_random_canadian"  # Channal name [NO CAPITALS]
-OWNER = "a_random_canadian" #Owner Name [NO CAPITALS]
-ADMIN = "statuschance" # Admin's name [NO CAPITALS]
+PASS = "oauth:"  # bot password can be found on https://twitchapps.com/tmi/
+BOT = "botname"  # Bot's name [NO CAPITALS]
+CHANNEL = "channel"  # Channal name [NO CAPITALS]
+OWNER = "owner" #Owner Name [NO CAPITALS]
+ADMIN = "admin" # Admin's name [NO CAPITALS]
  
 ### Functions
  
@@ -120,5 +120,7 @@ while True:
             if "!greetings" in message:
                 sendMessage(s, "Greetings from " + user + ". OSsloth /")
                 break
-            
+            if "!src" in message:
+                sendMessage (s, PMSG + "Source Code for this bot is located at https://github.com/RandomCanadian/twitchbot ")
+                break
 ############################################################################
