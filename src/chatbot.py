@@ -143,6 +143,8 @@ while True:
                 if guess != correct:
                     sendMessage (s, " " + user + " was incorrect!")
             break
-            break
+                if message.startswith("!randcancommands"):
+                    sendMessage (s, "Current commands for RandCanBot are !saymyname, !private, !src, !end (admin/dev killswitch), !greetings, !random, and !guessrandom [number from 1-10]")
+                    break
 
 ############################################################################
