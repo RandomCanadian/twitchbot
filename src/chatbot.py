@@ -1,6 +1,6 @@
 ### The only import you need!
 import socket
-import _random
+import random
  
 ### Options (Don't edit)
 SERVER = "irc.twitch.tv"  # server
@@ -48,6 +48,8 @@ def loadingCompleted(line):
         return False
     else:
         return True
+guess = (100)
+correct = (100)
 ### Code runs
 s_prep = socket.socket()
 s_prep.connect((SERVER, PORT))
@@ -123,4 +125,24 @@ while True:
             if "!src" in message:
                 sendMessage (s, PMSG + "Source Code for this bot is located at https://github.com/RandomCanadian/twitchbot ")
                 break
+            if message.startswith("!random"):
+                sendMessage (s, "Random number is " + str (random.randint(1, 100)) + " ")
+                break
+            if message.startswith("!guessrandom"):
+                guess =(message.split(" ")[1])
+                guess = int(guess)
+                correct = (random.randint(1, 10))
+                print (correct)
+                print (guess)
+                if (guess) is str:
+                    print ("guess is str")
+                if (guess) is int:
+                    print ("guess is int")
+                if guess is correct:
+                    sendMessage (s, " " + user + " correctly guessed " + str (correct) + " ")
+                if guess != correct:
+                    sendMessage (s, " " + user + " was incorrect!")
+            break
+            break
+
 ############################################################################
